@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Trumps</title>
+		<link 
+			rel = "icon" 
+			href = "https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" 
+        		type = "image/x-icon">
+	</head>
+	<body onload="loadSpreadsheet()" style="overflow: hidden;">
+
+		<iframe 
+			id="spreadsheet"
+			src="https://miro.medium.com/max/1400/1*pEDDi9wqhZr8zemkCeMwqw.gif"
+			title="Online Trumps"
+			scrolling="no"
+			style="position:absolute; top:0px; right:0px; bottom:0px; left:0px; height: 100%; width: 100%; background-color: black;">
+		</iframe>
+		<div style="position: absolute; height: 20px; width: 100%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: center; padding: 10px 0px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+			<img src="https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" alt="Online Trumps" height="20px" width="20px">
+			Online Trumps by alexanderborjacustodio@gmail.com
+		</div>
+
+		<script>
+			function loadSpreadsheet() {
+				var url = document.location.href;
+				var gameId = new URL(url).searchParams.get("gameId");
+				var playerId = new URL(url).searchParams.get("playerId");
+				if (gameId && playerId) {
+					var frameElement = document.getElementById("spreadsheet");
+					frameElement.src = "https://docs.google.com/spreadsheets/d/"+gameId+"/edit?rm=minimal#gid="+playerId;
+				}
+			}
+		</script>
+
+	</body>
+</html>
