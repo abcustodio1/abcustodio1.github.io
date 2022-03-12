@@ -7,31 +7,25 @@
 			href = "https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" 
         		type = "image/x-icon">
 	</head>
-	<body onload="loadSpreadsheet()" style="overflow: hidden;">
+	<body onload="loadSpreadsheet()" style="overflow: hidden; background-color: #101b39">
+		<div id="loading" style="position: absolute; height: 100%; width: 100%;">
+			<img src="https://cdn.dribbble.com/users/6360/screenshots/14490139/media/22a9d970405e01f358a9847389874916.gif" alt="Loading..." width="100%" style="height: 100%;">
+		</div>
 
 		<iframe 
 			id="spreadsheet"
-			src="https://miro.medium.com/max/1400/1*pEDDi9wqhZr8zemkCeMwqw.gif"
+			src=""
 			title="Online Trumps"
 			scrolling="no"
-			style="position:absolute; top:0px; right:0px; bottom:0px; left:0px; height: 100%; width: 100%; background-color: black;">
+			style="position:absolute; top:0px; right:0px; bottom:0px; left:0px; height: 100%; width: 100%; background-color: #101b39; display: none;">
 		</iframe>
+
 		<div style="position: absolute; height: 20px; width: 100%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: center; padding: 10px 0px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
 			<img src="https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" alt="Online Trumps" height="20px" width="20px">
-			Online Trumps by alexanderborjacustodio@gmail.com
+			Online Trumps by Alexander Custodio
 		</div>
 
-		<script>
-			function loadSpreadsheet() {
-				var url = document.location.href;
-				var gameId = new URL(url).searchParams.get("gameId");
-				var playerId = new URL(url).searchParams.get("playerId");
-				if (gameId && playerId) {
-					var frameElement = document.getElementById("spreadsheet");
-					frameElement.src = "https://docs.google.com/spreadsheets/d/"+gameId+"/edit?rm=minimal#gid="+playerId;
-				}
-			}
-		</script>
+		<script src="script.js"></script>
 
 	</body>
 </html>
