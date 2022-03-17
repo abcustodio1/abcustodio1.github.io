@@ -4,18 +4,32 @@ function loadSpreadsheet() {
 	var gameId = new URL(url).searchParams.get("gameId");
 	var playerId = new URL(url).searchParams.get("playerId");
 	if (gameId && playerId) {
-		var frameElement = document.getElementById("spreadsheet");
-		frameElement.src = "https://docs.google.com/spreadsheets/d/"+gameId+"/edit?rm=minimal#gid="+playerId;
-		frameElement.style.display = "block";
-
-		var loadingElement = document.getElementById("loading");
-		loadingElement.style.display = "none";
+		setTimeout(() => { openSheet(gameId, playerId); },0);
 	}
 	
 	// try to play background music
 	setTimeout(() => { 
 			turnOnMusic(); 
 	}, 5000);
+}
+
+function openSheet(gameId, playerId) {
+	var loadingText = document.getElementById("loading-text");
+	var timeleft = 5;
+	var openTimer = setInterval(function(){
+  		if(timeleft <= 0){
+    			clearInterval(openTimer);
+    			var frameElement = document.getElementById("spreadsheet");
+			frameElement.src = "https://docs.google.com/spreadsheets/d/"+gameId+"/edit?rm=minimal#gid="+playerId;
+			frameElement.style.display = "block";
+
+			var loadingElement = document.getElementById("loading");
+			loadingElement.style.display = "none";			
+  		} else {
+			loadingText.innerHTML = "O p e n i n g &nbsp;&nbsp;  i n &nbsp;&nbsp;&nbsp;<span style=\"color: red; font-weight: bold; \">"+ timeleft +"</span>&nbsp;. . .";    			
+  		}
+  		timeleft -= 1;
+	}, 1000);
 }
 
 function turnOnMusic() {
