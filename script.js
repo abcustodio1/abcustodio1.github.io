@@ -40,6 +40,7 @@ function turnOnMusic() {
 		// hide off icon, display on icon and volume slider
 		document.getElementById("off").style.display = "none";
 		document.getElementById("on").style.display = "block";
+		document.getElementById("music-changer").style.display = "inline-block";
 	}, () => {
 		console.log("Music not played!");
 	});	
@@ -52,9 +53,26 @@ function turnOffMusic() {
 	// hide on icon and volume slider, display on icon
 	document.getElementById("off").style.display = "block";
 	document.getElementById("on").style.display = "none";
+	document.getElementById("music-changer").style.display = "none";
 }
 
 function updateVolume(volume) {
 	var bgMusic = document.getElementById("bg-music");
 	bgMusic.volume = volume/100;        
+}
+
+function changeMusic() {
+	var musicChanger = document.getElementById("music-changer");
+	var bgMusic = document.getElementById("bg-music");
+	if (musicChanger.alt == "default") {
+		musicChanger.src = "leni.png";
+		musicChanger.alt = "leni";
+		bgMusic.src = "bg-music.mp3";
+		bgMusic.play();	
+	} else if (musicChanger.alt == "leni") {
+		musicChanger.src = "default.jpg";
+		musicChanger.alt = "default";
+		bgMusic.src = "leni.mp3";
+		bgMusic.play();
+	}
 }
