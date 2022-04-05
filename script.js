@@ -1,3 +1,65 @@
+function highscoreData() {
+	var lastGameDate = "04/05/2022";
+	
+	var scores = [
+			{name:"ALEX",scores:[101,121,36,101,162,91,90,68,90,106,77,100,121]},
+			{name:"ROMEO",scores:[103,148,74,111,123,124,115,122,107,83,173,152]},
+			{name:"SHEKI",scores:[113,92,57,120,147,52,124,124,111,122,100,193,122]},
+			{name:"HAZEL",scores:[68,102,76,76,99,102,67,86,101,85,100,136,105]},
+			{name:"CLINT",scores:[103,120,125,112,113,90,115]},
+			{name:"RK",scores:[71,86,80,125]},
+			{name:"YVES",scores:[65]},
+			{name:"NICOLE",scores:[154]},
+			{name:"SHAIRA",scores:[86]},
+			{name:"OrgMateNiLex",scores:[43,115,32,89,87,85,104,97,111,112,101]},
+			{name:"PatMae",scores:[76,100,103]}
+		     ]
+
+	return {date: lastGameDate, playerScores: scores};
+}
+////////////////////////////////////////////////////////////////////////////////
+
+
+function loadHighscores() {
+	var data = highscoreData();
+	
+	// set date
+	document.getElementById("highscore-latest-date").innerHTML = "(AVERAGE SCORE PER GAME FROM 03/13/2022 to "+data.date+")";
+
+
+	var playerScores = data.playerScores;
+
+	var scores = [];
+	for (let i = 0; i < playerScores.length; ++i) {
+		var playerData = playerScores[i];
+		var playerName = playerData.name;
+		var numberOfGames = playerData.scores.length;
+		var averageScore = playerData.scores.reduce((partialSum, a) => partialSum + a, 0)/numberOfGames;
+
+		scores.push({name: playerName, averageScore: averageScore.toFixed(2), numberOfGames: numberOfGames})
+	}
+
+	var sorted = scores.sort((a,b) => ((b.numberOfGames*1000) - (a.numberOfGames*1000)) + (b.averageScore - a.averageScore));
+
+	var namesInnerHTML = "";
+	for (let j = 0; j < sorted.length; ++j) {
+		namesInnerHTML += ("<pre><strong>"+sorted[j].name+"</strong>        "+sorted[j].averageScore+" (Played "+sorted[j].numberOfGames+" games)</pre>\n");
+	}
+	// set scores
+	document.getElementById("highscore-names").innerHTML = namesInnerHTML;
+	
+}
+
+function toggleHighscore() {
+	var highscoreDiv = document.getElementById("highscores");
+	if (highscoreDiv.style.display == "none") {
+		loadHighscores();
+		highscoreDiv.style.display = "block";
+	} else if (highscoreDiv.style.display == "block") {
+		highscoreDiv.style.display = "none";
+	}
+}
+
 function loadSpreadsheet() {
 
 	var url = document.location.href;
