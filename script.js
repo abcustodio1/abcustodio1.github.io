@@ -11,7 +11,7 @@ function highscoreData() {
 			{name:"YVES",scores:[65]},
 			{name:"NICOLE",scores:[154]},
 			{name:"SHAIRA",scores:[86]},
-			{name:"OrgMateNiLex",scores:[43,115,32,89,87,85,104,97,111,112,101]},
+			{name:"David",scores:[43,115,32,89,87,85,104,97,111,112,101]},
 			{name:"PatMae",scores:[76,100,103]}
 		     ]
 
