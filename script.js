@@ -7,12 +7,12 @@ function highscoreData() {
 			{name:"SHEKI",scores:[113,92,57,120,147,52,124,124,111,122,100,193,122,78,114,124,85]},
 			{name:"HAZEL",scores:[68,102,76,76,99,102,67,86,101,85,100,136,105,105,126,87]},
 			{name:"CLINT",scores:[103,120,125,112,113,90,115,104]},
-			{name:"RK",scores:[71,86,80,125,99]},
+			{name:"---",scores:[71,86,80,125,99]}, // rk
 			{name:"YVES",scores:[65,92]},
 			{name:"NICOLE",scores:[154]},
 			{name:"SHAIRA",scores:[86,66]},
-			{name:"David",scores:[43,115,32,89,87,85,104,97,111,112,101,165,73,113]},
-			{name:"PatMae",scores:[76,100,103]}
+			{name:"---",scores:[43,115,32,89,87,85,104,97,111,112,101,165,73,113]}, // poy
+			{name:"---",scores:[76,100,103]} // patmae
 		     ]
 
 	return {date: lastGameDate, playerScores: scores};
