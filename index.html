@@ -7,6 +7,20 @@
 			href = "https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" 
         		type = "image/x-icon">
 		<link href="https://fonts.cdnfonts.com/css/crazy-robot" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./CSS-Playing-Cards-master/cards.css" media="screen" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	    <script type="text/javascript"><!--
+	    $(document).ready(function(){
+	        $('.options').addClass('active');
+	        $('.toggle li').click(function(){
+	            $('.playingCards').toggleClass($(this).text());
+	        });
+	        $('.lang li').click(function(){
+	            $('html').attr('lang', $(this).text());
+	            $('html').attr('xml:lang', $(this).text());
+	        });
+	    });
+	    </script>
 	</head>
 	<body onload="loadSpreadsheet()" style="overflow: hidden; background-color: #101b39">
 		<audio id="bg-music" src="bg-music.mp3" loop>
@@ -20,10 +34,94 @@
 			<br>
 		</div>
 
-		<div id="loading" style="position: absolute; height: 100%; width: 100%;">
-			<img src="https://cdn.dribbble.com/users/6360/screenshots/14490139/media/22a9d970405e01f358a9847389874916.gif" alt="Loading..." width="100%" height="100%" style="position: absolute;">
-			<img src="Octo Logo 2020.png" alt="OctoSoc Logo" width="30%" height="45%" style="position: absolute; margin: 0 35%;">
-			<div id="loading-text" style="width: 100%; top: 75%; position: absolute; text-align: center; color: white; font-family: 'Crazy Robot', sans-serif; font-size: 30px;">L o a d i n g . . .   &nbsp;P l e a s e &nbsp; W a i t !</div>
+		<div style="position: absolute; height: 100%; width: 100%; text-align: center;">
+			
+		</div>
+
+		<div id="loading" style="position: absolute; height: 7em; width: 100%; bottom: 6%; left: 0px;">
+
+				<div class="playingCards faceImages rotateHand">
+					<ul class="table">
+						<li>
+				            <a class="card disabled rank-j diams" href="#">
+				                <span class="rank">J</span>
+				                <span class="suit">&diams;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-a hearts" href="#">
+				                <span class="rank">A</span>
+				                <span class="suit">&hearts;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-j diams" href="#">
+				                <span class="rank">J</span>
+				                <span class="suit">&diams;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-a hearts" href="#">
+				                <span class="rank">A</span>
+				                <span class="suit">&hearts;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-7 diams" href="#">
+				                <span class="rank">7</span>
+				                <span class="suit">&diams;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-8 hearts" href="#">
+				                <span class="rank">8</span>
+				                <span class="suit">&hearts;</span>
+				            </a>
+				        </li>
+				        <li>
+			                <a class="card back" href="#">
+			                    <span class="rank">9</span>
+			                    <span class="suit">&spades;</span>
+			                </a>
+				        </li>
+				        <li>
+				            <a class="card disabled rank-10 clubs" href="#">
+				                <span class="rank">10</span>
+				                <span class="suit">&clubs;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-j diams" href="#">
+				                <span class="rank">J</span>
+				                <span class="suit">&diams;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-5 clubs" href="#">
+				                <span class="rank">5</span>
+				                <span class="suit">&clubs;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-6 diams" href="#">
+				                <span class="rank">6</span>
+				                <span class="suit">&diams;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-q hearts" href="#">
+				                <span class="rank">Q</span>
+				                <span class="suit">&hearts;</span>
+				            </a>
+				        </li>
+				        <li>
+				            <a class="card rank-k spades" href="#">
+				                <span class="rank">K</span>
+				                <span class="suit">&spades;</span>
+				            </a>
+				        </li>
+				    </ul>
+				</div>
 		</div>
 
 		<iframe 
@@ -35,12 +133,12 @@
 		</iframe>
 
 
-		<div style="position: absolute; height: 20px; width: 100%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: center; padding: 10px 0px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
+		<div style="position: absolute; height: 3%; width: 100%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: center; padding: 10px 0px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
 			<img src="https://www.pngall.com/wp-content/uploads/4/Fanned-Playing-Card-Transparent.png" alt="Online Trumps" height="20px" width="20px" onClick="toggleHighscore()">
 			Online Trumps by Alexander Custodio
 		</div>
 
-		<div style="position: absolute; height: 20px; width: 25%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: left; padding: 10px 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
+		<div style="position: absolute; height: 3%; width: 25%; bottom: 0px; left: 0px; background-color: black; color: white; text-align: left; padding: 10px 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
 			<img id="off" src="off.png" alt="music-off" height="20px" width="20px" style="display: block;" onClick="turnOnMusic()">
 			<div id="on" style="display: none;">
 				<img src="on.png" alt="music-off" height="20px" width="20px" onClick="turnOffMusic()">
@@ -48,7 +146,7 @@
 			</div>
 		</div>
 
-		<div style="position: absolute; height: 20px; width: 25%; bottom: 0px; right: 0px; background-color: black; color: white; text-align: right; padding: 10px 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
+		<div style="position: absolute; height: 3%; width: 25%; bottom: 0px; right: 0px; background-color: black; color: white; text-align: right; padding: 10px 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif; z-index: 999;">
 			<img id="music-changer" src="leni.png" alt="leni" height="20px" width="20px" style="display: none;" onClick="changeMusic()">
 		</div>
 
